@@ -1,0 +1,160 @@
+:root {
+  --mp-bg: #f5f7fa;
+  --mp-border: #e4e7ed;
+  --mp-text-muted: #909399;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    Arial, sans-serif;
+  background: var(--mp-bg);
+  color: #303133;
+}
+
+/* 页面通用容器 */
+.page {
+  padding: 16px 20px 28px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--mp-text-muted);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.text-muted {
+  color: var(--mp-text-muted);
+}
+
+.text-small {
+  font-size: 12px;
+}
+
+.text-mono {
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+  line-height: 1.75;
+  word-break: break-word;
+}
+
+/* 卡片内的分区标题 */
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  padding-left: 9px;
+  border-left: 3px solid var(--el-color-primary);
+  line-height: 1.2;
+}
+
+/* AI 输出的结构化条目 */
+.ai-block {
+  background: #fafbfc;
+  border: 1px solid var(--mp-border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.ai-block-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--el-color-primary);
+  margin-bottom: 6px;
+}
+
+/* 素材缩略图 */
+.asset-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--mp-border);
+  border-radius: 4px;
+}
+
+.asset-thumb.is-video {
+  aspect-ratio: 9 / 16;
+  max-height: 220px;
+}
+
+/* 合规提示条 */
+.compliance-note {
+  background: #fdf6ec;
+  border: 1px solid #f5dab1;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 12.5px;
+  color: #b88230;
+  line-height: 1.7;
+}
+
+.detail-header-card {
+  margin-bottom: 16px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 12.5px;
+  color: var(--mp-text-muted);
+  margin-top: 4px;
+}
