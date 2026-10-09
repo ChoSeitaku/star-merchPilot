@@ -20,6 +20,13 @@ const latestReport = ref(null)
 
 const activeTab = ref('performance')
 
+/**
+ * 复盘报告折叠面板的展开项。
+ * 必须与内层 el-tabs 的 activeTab 分开：折叠项的 name 是 report.id（数字），
+ * 若两者共用同一个 ref，展开报告会把内层标签切到不存在的面板名，报告内容会立刻消失。
+ */
+const activeReport = ref(null)
+
 // 手工录入
 const recordDialog = ref(false)
 const submitting = ref(false)
@@ -175,6 +182,7 @@ async function generateReport() {
     reportDialog.value = false
     await load()
     activeTab.value = 'report'
+    activeReport.value = report.id
     emit('changed')
   } finally {
     generating.value = false
@@ -347,7 +355,7 @@ onMounted(load)
                   :image-size="90" />
 
         <template v-else>
-          <el-collapse v-model="activeTab" accordion>
+          <el-collapse v-model="activeReport" accordion>
             <el-collapse-item v-for="report in reports" :key="report.id" :name="report.id">
               <template #title>
                 <div class="report-title">
